@@ -1,0 +1,40 @@
+{
+    "name": "llllyang123/think-addons-yxc",
+    "description": "The ThinkPHP6 Addons Package",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Bruce",
+            "email": "673011635@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "topthink/framework": "^6.0.3",
+        "topthink/think-view": "^1.0",
+        "topthink/think-helper": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "think\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "think\\addons\\Service"
+            ],
+            "config":{
+                "addons": "src/config.php"
+            }
+        }
+    },
+    "scripts" : {
+        "post-install-cmd": [
+            "php think addons:config"
+        ]
+    }
+}
